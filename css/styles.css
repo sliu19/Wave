@@ -755,6 +755,7 @@ nav ul li a.active {
 }
 .carousel-img img {
     width: 100%;
+    height: 200px;
 }
 .controls {
     margin: 20px;

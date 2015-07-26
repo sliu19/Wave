@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script type="text/javascript">
+    function getParam( name )
+    {
+      name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+      var regexS = "[\\?&]"+name+"=([^&#]*)";
+      var regex = new RegExp( regexS );
+      var results = regex.exec( window.location.href );
+      if( results == null )
+        return "";
+      else
+        return results[1];
+    }
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
@@ -37,12 +50,14 @@
         </div>     
     </header>
     <div class="laptop-slider">
-      <video  controls>
-          <source  src="http://html-css-guide.herokuapp.com/assets/courses/html-css-guide/images-audio-video/earth.ogv" type="video/ogg">
-          <source  src="http://html-css-guide.herokuapp.com/assets/courses/html-css-guide/images-audio-video/earth.mp4" type="video/mp4">
-          Please <a href="http://html-css-guide.herokuapp.com/assets/courses/html-css-guide/images-audio-video/earth.mp4" download>download</a> the video.
-      </video>
+          <iframe id = "myFrame" width="800" height="600" frameborder="0" allowfullscreen>
+          </iframe>
     </div>
+
+     <script type="text/javascript">
+      var url = getParam("url");
+      document.getElementById("myFrame").src = url + "?autoplay=1";
+    </script>
     <footer>
       <div class="container">
         <div class="row">
